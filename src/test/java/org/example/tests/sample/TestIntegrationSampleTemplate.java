@@ -1,4 +1,4 @@
-package org.example.Sample;
+package org.example.tests.sample;
 
 import io.qameta.allure.Description;
 import org.testng.Assert;
