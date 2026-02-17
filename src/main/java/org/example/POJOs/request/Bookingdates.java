@@ -28,4 +28,6 @@ public class Bookingdates {
         this.checkout = checkout;
     }
 
+    public void setbo() {
+    }
 }
