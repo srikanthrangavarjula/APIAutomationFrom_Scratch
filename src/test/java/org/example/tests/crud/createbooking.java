@@ -24,4 +24,20 @@ public class createbooking extends BaseClass_CommonTOAll {
         assertactions.Verifystringkey(bookingResponse.getBooking().getFirstname(),"Srikanth");
 
     }
+
+    @Test(groups = "reg", priority = 1)
+    @Description("#1. Verify that booking is created or not")
+    public void testcreatebookingRandomly(){
+        //System.out.println("I'm in positive test");
+        //setup and making a request
+        requestSpecification.basePath(APIConstants_URLs.Create_update_bookingURL);
+        response = RestAssured.given(requestSpecification).when().body(payloadManager.CreatepayloadBookingWithFakerJS()).post();
+        System.out.println(response.asString());
+        //Extraction
+        BookingResponse bookingResponse = payloadManager.bookingResponse(response.asString());
+        //Verification
+        assertactions.VerifyStringkeynotnull(bookingResponse.getBookingid());
+       // assertactions.Verifystringkey(bookingResponse.getBooking().getFirstname(),"Srikanth");
+
+    }
 }
